@@ -1,0 +1,19 @@
+{
+  "extends": ["universe", "plugin:react-hooks/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false,
+        "useTabs": false,
+        "tabWidth": 2,
+        "trailingComma": "all",
+        "printWidth": 80,
+        "bracketSpacing": true,
+        "arrowParens": "avoid"
+      }
+    ],
+    "no-unused-vars": "off" //App() 내부에서 사용하는 react-native 코어 컴포넌트에 대해 lint 인식이 잘 안되어 우선 꺼두도록 설정
+  }
+}
