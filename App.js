@@ -32,7 +32,11 @@ export default function App() {
 
   return (
     <View style={styles.abbContainer}>
-      <Button title="Add Goals!!" onPress={startAddGoalHandler} />
+      <Button
+        title="Add Goals!!"
+        onPress={startAddGoalHandler}
+        color="#ff1a42"
+      />
       <GoalInput
         visiable={isModalVisible}
         onAddGoal={addGoalHandler}
@@ -65,6 +69,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 16,
     flex: 1,
+    gap: 16,
   },
   goalsContainer: {
     flex: 5,
