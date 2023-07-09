@@ -14,6 +14,12 @@ export default function App() {
     ])
   }
 
+  const deleteGoalHandler = id => {
+    setCourseGoals(currentCourseGoals => {
+      return currentCourseGoals.filter(goal => goal.id !== id)
+    })
+  }
+
   return (
     <View style={styles.abbContainer}>
       <GoalInput onAddGoal={addGoalHandler} />
@@ -22,7 +28,13 @@ export default function App() {
           alwaysBounceVertical={false}
           data={courseGoals}
           renderItem={({ item }) => {
-            return <GoalItem text={item.text} />
+            return (
+              <GoalItem
+                text={item.text}
+                id={item.id}
+                onDeleteItem={deleteGoalHandler}
+              />
+            )
           }}
           keyExtractor={item => {
             return item.id
