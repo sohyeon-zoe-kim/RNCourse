@@ -13,6 +13,7 @@ export default function App() {
       ...currentCourseGoals,
       { text: enteredGoalText, id: Math.random().toString() },
     ])
+    endAddGoalHandler()
   }
 
   const deleteGoalHandler = id => {
@@ -25,10 +26,18 @@ export default function App() {
     setIsModalVisible(true)
   }
 
+  const endAddGoalHandler = () => {
+    setIsModalVisible(false)
+  }
+
   return (
     <View style={styles.abbContainer}>
       <Button title="Add Goals!!" onPress={startAddGoalHandler} />
-      <GoalInput visiable={isModalVisible} onAddGoal={addGoalHandler} />
+      <GoalInput
+        visiable={isModalVisible}
+        onAddGoal={addGoalHandler}
+        onCancle={endAddGoalHandler}
+      />
       <View style={styles.goalsContainer}>
         <FlatList
           alwaysBounceVertical={false}
