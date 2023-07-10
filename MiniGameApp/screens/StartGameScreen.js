@@ -12,8 +12,10 @@ function StartGameScreen() {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <PrimaryButton>Reset</PrimaryButton>
-      <PrimaryButton>Confirm</PrimaryButton>
+      <View style={style.buttonsContainer}>
+        <PrimaryButton>Reset</PrimaryButton>
+        <PrimaryButton>Confirm</PrimaryButton>
+      </View>
     </View>
   )
 }
@@ -28,6 +30,7 @@ const style = StyleSheet.create({
     backgroundColor: '#ff1a42',
     borderRadius: 8,
     elevation: 4, //android에서 shadow 넣는 방법
+    alignItems: 'center',
     shadowColor: 'black', //shadowXXX -> iOS에서 shadow 넣는 방법
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 6,
@@ -43,5 +46,11 @@ const style = StyleSheet.create({
     marginVertical: 8,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+  },
+  buttonContainer: {
+    flex: 1,
   },
 })
