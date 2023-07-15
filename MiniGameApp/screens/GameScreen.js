@@ -14,11 +14,7 @@ const DIRECTION = {
 Object.freeze(DIRECTION)
 
 function GameScreen({ userNumber }) {
-  const initialGuess = generateRandomBetween(
-    minBoundary,
-    maxBoundary,
-    userNumber,
-  )
+  const initialGuess = generateRandomBetween(minBoundary, maxBoundary, userNumber)
   const [currentGuess, setCurrentGuess] = useState(initialGuess)
 
   function generateRandomBetween(min, max, exclude) {
@@ -46,11 +42,7 @@ function GameScreen({ userNumber }) {
     } else {
       minBoundary = currentGuess + 1
     }
-    const newRndNumber = generateRandomBetween(
-      minBoundary,
-      maxBoundary,
-      currentGuess,
-    )
+    const newRndNumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess)
     setCurrentGuess(newRndNumber)
   }
 
@@ -64,9 +56,7 @@ function GameScreen({ userNumber }) {
           <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.LOWER)}>
             -
           </PrimaryButton>
-          <PrimaryButton
-            onPress={nextGuessHandler.bind(this, DIRECTION.GREATER)}
-          >
+          <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.GREATER)}>
             +
           </PrimaryButton>
         </View>
