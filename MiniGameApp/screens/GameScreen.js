@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons'
 import { useState, useEffect } from 'react'
 import { View, StyleSheet, Alert } from 'react-native'
 
@@ -62,10 +63,10 @@ function GameScreen({ userNumber, onGameOver }) {
         <InstructionText style={styles.instructionText}>Higher or lower?</InstructionText>
         <View style={styles.buttonsContainer}>
           <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.LOWER)}>
-            -
+            <Ionicons name="md-remove" size={24} color="white" />
           </PrimaryButton>
           <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.GREATER)}>
-            +
+            <Ionicons name="md-add" size={24} color="white" />
           </PrimaryButton>
         </View>
       </Card>
