@@ -4,7 +4,7 @@ import PrimaryButton from '../components/ui/PrimaryButton'
 import Title from '../components/ui/Title'
 import Colors from '../constants/colors'
 
-function StartGameScreen() {
+function GameOverScreen() {
   return (
     <View style={styles.rootContainer}>
       <Title>Game Over!</Title>
@@ -20,7 +20,7 @@ function StartGameScreen() {
   )
 }
 
-export default StartGameScreen
+export default GameOverScreen
 
 const styles = StyleSheet.create({
   rootContainer: {
