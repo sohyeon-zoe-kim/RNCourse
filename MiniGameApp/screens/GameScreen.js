@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons'
 import { useState, useEffect } from 'react'
-import { View, StyleSheet, Alert } from 'react-native'
+import { View, StyleSheet, Alert, Text } from 'react-native'
 
 import NumberContainer from '../components/game/NumberContainer'
 import Card from '../components/ui/Card'
@@ -19,6 +19,7 @@ Object.freeze(DIRECTION)
 function GameScreen({ userNumber, onGameOver }) {
   const initialGuess = generateRandomBetween(1, 100, userNumber)
   const [currentGuess, setCurrentGuess] = useState(initialGuess)
+  const [guessRounds, setGuessRounds] = useState([initialGuess])
 
   useEffect(() => {
     minBoundary = 1
@@ -52,6 +53,7 @@ function GameScreen({ userNumber, onGameOver }) {
     }
     const newRndNumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess)
     setCurrentGuess(newRndNumber)
+    setGuessRounds(prevGuessRounds => [newRndNumber, ...prevGuessRounds])
   }
 
   useEffect(() => {
@@ -75,7 +77,11 @@ function GameScreen({ userNumber, onGameOver }) {
           </PrimaryButton>
         </View>
       </Card>
-      {/* <View>LOG ROUNDS</View> */}
+      <View>
+        {guessRounds.map(guessRound => (
+          <Text key={guessRound}>{guessRound}</Text>
+        ))}
+      </View>
     </View>
   )
 }
