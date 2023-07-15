@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   buttonText: {
-    color: 'white',
+    color: Colors.white,
     textAlign: 'center',
   },
   pressed: {
-    opacity: 0.75,
+    opacity: 0.6,
   },
 })
