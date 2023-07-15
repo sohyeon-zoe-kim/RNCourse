@@ -4,6 +4,7 @@ const Colors = {
   secondary500: '#ff6f87',
   secondary600: '#d3475e',
   accent500: '#e5ff7e',
+  white: '#ffffff',
 }
 
 export default Colors
