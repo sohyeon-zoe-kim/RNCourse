@@ -1,3 +1,4 @@
+import { useFonts } from 'expo-font'
 import { LinearGradient } from 'expo-linear-gradient'
 import { useState } from 'react'
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native'
@@ -10,6 +11,15 @@ import StartGameScreen from './screens/StartGameScreen'
 export default function App() {
   const [pickedNumber, setPickedNumber] = useState()
   const [isGameOver, setIsGameOver] = useState(true)
+
+  const [fontsLoaded] = useFonts({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+  })
+
+  if (!fontsLoaded) {
+    return null
+  }
 
   function pickedNumberHandler(pickedNumber) {
     setPickedNumber(pickedNumber)
