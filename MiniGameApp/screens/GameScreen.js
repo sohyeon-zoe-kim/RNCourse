@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Text, View, StyleSheet, Alert } from 'react-native'
+import { View, StyleSheet, Alert } from 'react-native'
 
 import NumberContainer from '../components/game/NumberContainer'
 import Card from '../components/ui/Card'

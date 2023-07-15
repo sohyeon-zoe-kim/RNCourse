@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TextInput, Text, View, StyleSheet, Alert } from 'react-native'
+import { TextInput, View, StyleSheet, Alert } from 'react-native'
 
 import Card from '../components/ui/Card'
 import InstructionText from '../components/ui/InstructionText'
