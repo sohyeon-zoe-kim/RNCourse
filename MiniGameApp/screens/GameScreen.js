@@ -1,7 +1,8 @@
 import { Ionicons } from '@expo/vector-icons'
 import { useState, useEffect } from 'react'
-import { View, StyleSheet, Alert, Text } from 'react-native'
+import { View, StyleSheet, Alert, Text, FlatList } from 'react-native'
 
+import GuessLogItem from '../components/game/GuessLogItem'
 import NumberContainer from '../components/game/NumberContainer'
 import Card from '../components/ui/Card'
 import InstructionText from '../components/ui/InstructionText'
@@ -58,9 +59,11 @@ function GameScreen({ userNumber, onGameOver }) {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver()
+      onGameOver(guessRounds.length)
     }
-  }, [currentGuess, userNumber, onGameOver])
+  }, [currentGuess, userNumber, onGameOver, guessRounds])
+
+  const guessRoundsListLength = guessRounds.length
 
   return (
     <View style={styles.screen}>
@@ -77,10 +80,22 @@ function GameScreen({ userNumber, onGameOver }) {
           </PrimaryButton>
         </View>
       </Card>
-      <View>
-        {guessRounds.map(guessRound => (
-          <Text key={guessRound}>{guessRound}</Text>
-        ))}
+      <View style={styles.listContainer}>
+        <FlatList
+          alwaysBounceVertical={false}
+          data={guessRounds}
+          renderItem={({ item, index }) => {
+            return (
+              <GuessLogItem
+                roundNumber={guessRoundsListLength - index}
+                guess={item}
+              ></GuessLogItem>
+            )
+          }}
+          keyExtractor={item => {
+            return item
+          }}
+        ></FlatList>
       </View>
     </View>
   )
@@ -98,5 +113,9 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flexDirection: 'row',
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 })
