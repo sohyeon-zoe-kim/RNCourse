@@ -1,10 +1,11 @@
-import { TextInput, View } from 'react-native'
+import { TextInput, View, Text } from 'react-native'
 
 function StartGameScreen() {
   return (
     <View>
+      <Text>Gmae Over!</Text>
       <TextInput />
-      //Button
+      {/* //Button */}
     </View>
   )
 }
