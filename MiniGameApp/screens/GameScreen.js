@@ -72,17 +72,21 @@ function GameScreen({ userNumber, onGameOver }) {
       <Card>
         <InstructionText style={styles.instructionText}>Higher or lower?</InstructionText>
         <View style={styles.buttonsContainer}>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.LOWER)}>
-            <Ionicons name="md-remove" size={24} color="white" />
-          </PrimaryButton>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.GREATER)}>
-            <Ionicons name="md-add" size={24} color="white" />
-          </PrimaryButton>
+          <View style={styles.button}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.LOWER)}>
+              <Ionicons name="md-remove" size={24} color="white" />
+            </PrimaryButton>
+          </View>
+          <View style={styles.button}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, DIRECTION.GREATER)}>
+              <Ionicons name="md-add" size={24} color="white" />
+            </PrimaryButton>
+          </View>
         </View>
       </Card>
       <View style={styles.listContainer}>
         <FlatList
-          alwaysBounceVertical={false}
+          alwaysBounceVertiwcal={false}
           data={guessRounds}
           renderItem={({ item, index }) => {
             return (
@@ -107,6 +111,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
+    alignItems: 'center',
   },
   instructionText: {
     marginBottom: 12,
@@ -117,5 +122,8 @@ const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
     padding: 16,
+  },
+  button: {
+    flex: 1,
   },
 })
