@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Image } from 'react-native'
 
-import MealDetails from './MealDetails'
-import MealCard from '../components/MealCard'
+import MealCard from '../MealCard'
+import MealDetails from '../MealDetails'
 
 function MealItem({ id, title, imageUrl, duration, complexity, affordability }) {
   return (
