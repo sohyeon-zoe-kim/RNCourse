@@ -1,5 +1,6 @@
 import { StyleSheet, View, Text, Image } from 'react-native'
 
+import MealDetails from './MealDetails'
 import MealCard from '../components/MealCard'
 
 function MealItem({ id, title, imageUrl, duration, complexity, affordability }) {
@@ -8,11 +9,11 @@ function MealItem({ id, title, imageUrl, duration, complexity, affordability }) 
       <View>
         <Image source={{ uri: imageUrl }} style={styles.mealImage} />
         <Text style={styles.title}>{title}</Text>
-      </View>
-      <View style={styles.details}>
-        <Text style={styles.detailItem}>{duration}m</Text>
-        <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-        <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
+        <MealDetails
+          duration={duration}
+          complexity={complexity}
+          affordability={affordability}
+        />
       </View>
     </MealCard>
   )
@@ -30,15 +31,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     margin: 8,
-  },
-  details: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 8,
-  },
-  detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
   },
 })
