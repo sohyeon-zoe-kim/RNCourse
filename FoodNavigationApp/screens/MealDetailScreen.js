@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { StyleSheet, View, Text, Image, ScrollView, Button } from 'react-native'
 
+import IconButton from '../components/IconButton'
 import List from '../components/MealDetail/List'
 import SubTitle from '../components/MealDetail/Subtitle'
 import MealDetails from '../components/MealDetails'
@@ -17,7 +18,7 @@ function MealDetailScreen({ route, navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="Favorite" onPress={headerButtonPressHandler} />
+        return <IconButton icon="star" color="white" onPress={headerButtonPressHandler} />
       },
     })
   }, [navigation, headerButtonPressHandler])
