@@ -1,10 +1,19 @@
+import { useNavigation } from '@react-navigation/native'
 import { View, StyleSheet, Pressable } from 'react-native'
-function MealCard({ children }) {
+
+function MealCard({ children, id }) {
+  const navigation = useNavigation()
+
+  function selectMealItemTrigger() {
+    navigation.navigate('MealDetail', { mealId: id })
+  }
+
   return (
     <View style={styles.mealCard}>
       <Pressable
         android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
+        onPress={selectMealItemTrigger}
       >
         <View style={styles.innerContainer}>{children}</View>
       </Pressable>

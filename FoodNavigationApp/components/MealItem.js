@@ -2,9 +2,9 @@ import { StyleSheet, View, Text, Image } from 'react-native'
 
 import MealCard from '../components/MealCard'
 
-function MealItem({ title, imageUrl, duration, complexity, affordability }) {
+function MealItem({ id, title, imageUrl, duration, complexity, affordability }) {
   return (
-    <MealCard>
+    <MealCard id={id}>
       <View>
         <Image source={{ uri: imageUrl }} style={styles.mealImage} />
         <Text style={styles.title}>{title}</Text>
