@@ -10,7 +10,6 @@ import CategoriesScreen from './screens/CategoriesScreen'
 import FavoritesScreen from './screens/FavoritesScreen'
 import MealDetailScreen from './screens/MealDetailScreen'
 import MealsOverViewScreen from './screens/MealsOverViewScreen'
-// import FavoritesContextProvider from './store/context/favorites-context'
 import { store } from './store/redux/store'
 
 const Stack = createNativeStackNavigator()

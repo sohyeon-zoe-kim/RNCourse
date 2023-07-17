@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react'
-import { StyleSheet, View, Text, Image, ScrollView, Button } from 'react-native'
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 
 import IconButton from '../components/IconButton'
