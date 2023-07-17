@@ -7,7 +7,7 @@ function renderCategoryItem(itemData) {
   return <CategoryGridTile title={itemData.item.title} color={itemData.item.color} />
 }
 
-function CategoryScreen() {
+function CategoriesScreen() {
   return (
     <FlatList
       data={CATEGORIES}
@@ -18,4 +18,4 @@ function CategoryScreen() {
   )
 }
 
-export default CategoryScreen
+export default CategoriesScreen
