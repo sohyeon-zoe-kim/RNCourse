@@ -11,17 +11,16 @@ function MealDetailScreen({ route, navigation }) {
   const mealId = route.params.mealId
   const selectedMeal = MEALS.find(meal => meal.id === mealId)
 
-  function headerButtonPressHandler() {
-    console.log('Pressed!')
-  }
-
   useLayoutEffect(() => {
+    function headerButtonPressHandler() {
+      console.log('Pressed')
+    }
     navigation.setOptions({
       headerRight: () => {
         return <IconButton icon="star" color="white" onPress={headerButtonPressHandler} />
       },
     })
-  }, [navigation, headerButtonPressHandler])
+  }, [navigation])
 
   return (
     <ScrollView style={styles.root}>
