@@ -3,10 +3,10 @@ import { View } from 'react-native'
 import ExpensesList from './ExpensesList'
 import ExpensesSummary from './ExpensesSummary'
 
-function ExpensesOutput({ expenses }) {
+function ExpensesOutput({ expenses, expensesPeriod }) {
   return (
     <View>
-      <ExpensesSummary />
+      <ExpensesSummary periodName={expensesPeriod} expenses={expenses} />
       <ExpensesList />
     </View>
   )
