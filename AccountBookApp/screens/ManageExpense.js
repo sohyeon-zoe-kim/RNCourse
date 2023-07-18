@@ -5,6 +5,7 @@ import Button from '../components/UI/Button'
 import IconButton from '../components/UI/IconButton'
 import { GlobalStyles } from '../constants/styles'
 import { ExpensesContext } from '../store/context/expenses-context'
+import { storeExpense } from '../util/http'
 
 function ManageExpense({ route, navigation }) {
   const editedExpenseId = route.params?.expenseId
@@ -27,6 +28,12 @@ function ManageExpense({ route, navigation }) {
   }
 
   function confirmHandler() {
+    const DUMMY_ADD_DATA = {
+      description: 'Test',
+      amount: 19.99,
+      date: new Date('2023-07-14'),
+    }
+
     if (isEditing) {
       expensesCtx.updateExpense(editedExpenseId, {
         description: 'UpdateTest',
@@ -34,11 +41,8 @@ function ManageExpense({ route, navigation }) {
         date: new Date('2023-07-15'),
       })
     } else {
-      expensesCtx.addExpense({
-        description: 'Test',
-        amount: 19.99,
-        date: new Date('2023-07-14'),
-      })
+      storeExpense(DUMMY_ADD_DATA)
+      expensesCtx.addExpense(DUMMY_ADD_DATA)
     }
     navigation.goBack()
   }
