@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "FoodNavigationApp",
+    "name": "My Recipe Book",
     "slug": "FoodNavigationApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,16 +16,25 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sohyeonkim.myrecipebook"
     },
     "android": {
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sohyeonkim.myrecipebook"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7018f0be-bed4-4575-bf3a-a2a20a976b1a"
+      }
     }
   }
 }
